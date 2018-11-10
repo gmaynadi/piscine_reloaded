@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmaynadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 15:11:41 by gmaynadi          #+#    #+#             */
-/*   Updated: 2018/11/10 15:33:45 by gmaynadi         ###   ########.fr       */
+/*   Created: 2018/11/10 17:49:12 by gmaynadi          #+#    #+#             */
+/*   Updated: 2018/11/10 17:57:39 by gmaynadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include <stdlib.h>
 
-void	ft_print_alphabet(void)
+int		ft_strlen(char *str)
 {
-	char a;
+	int i;
 
-	a = 'a';
-	while (a <= 'z')
+	i = 0;
+	while (str[i])
+		i++;
+	return i;
+}
+
+char	*ft_strdup(char *src)
+{
+	char	*dup;
+	int		len;
+	int		i;
+
+	len = ft_strlen(src);
+	i = 0;
+	if (!(dup = (char*)malloc(sizeof(char) * (len + 1))))
+		return NULL;
+	while (src[i])
 	{
-		ft_putchar(a);
-		a += 1;
+		dup[i] = src[i];
+		i++;
 	}
+	dup[i] = '\0';
+	return dup;
 }

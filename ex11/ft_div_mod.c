@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmaynadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 15:11:41 by gmaynadi          #+#    #+#             */
-/*   Updated: 2018/11/10 15:33:45 by gmaynadi         ###   ########.fr       */
+/*   Created: 2018/11/10 15:50:32 by gmaynadi          #+#    #+#             */
+/*   Updated: 2018/11/10 15:52:26 by gmaynadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
 
-void	ft_print_alphabet(void)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	char a;
-
-	a = 'a';
-	while (a <= 'z')
-	{
-		ft_putchar(a);
-		a += 1;
-	}
+	*div = a/b;
+	*mod = a%b;
 }

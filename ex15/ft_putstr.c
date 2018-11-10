@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmaynadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 15:11:41 by gmaynadi          #+#    #+#             */
-/*   Updated: 2018/11/10 15:33:45 by gmaynadi         ###   ########.fr       */
+/*   Created: 2018/11/10 16:53:17 by gmaynadi          #+#    #+#             */
+/*   Updated: 2018/11/10 17:00:21 by gmaynadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_print_alphabet(void)
+void	ft_putstr(char *str)
 {
-	char a;
+	int i;
 
-	a = 'a';
-	while (a <= 'z')
+	i = 0;
+	while (str[i])
 	{
-		ft_putchar(a);
-		a += 1;
+		ft_putchar(str[i]);
+		i++;
 	}
 }
