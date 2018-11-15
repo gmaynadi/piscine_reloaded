@@ -6,7 +6,7 @@
 /*   By: gmaynadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 17:00:43 by gmaynadi          #+#    #+#             */
-/*   Updated: 2018/11/10 17:02:00 by gmaynadi         ###   ########.fr       */
+/*   Updated: 2018/11/10 18:11:03 by gmaynadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int		ft_strlen(char *str)
 	i = 0;
 	while (str[i])
 		i++;
-	return i;
+	return (i);
 }

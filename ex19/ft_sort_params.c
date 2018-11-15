@@ -6,7 +6,7 @@
 /*   By: gmaynadi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/10 17:19:45 by gmaynadi          #+#    #+#             */
-/*   Updated: 2018/11/10 17:46:41 by gmaynadi         ###   ########.fr       */
+/*   Updated: 2018/11/10 18:20:43 by gmaynadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_pustr(char *str)
 	int i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		ft_putchar(str[i]);
 		i++;
@@ -41,25 +41,24 @@ int		main(int argc, char **argv)
 	int		error;
 
 	error = 1;
-	if (argc > 1)
+	while (error)
 	{
-		while (error)
+		error = 0;
+		i = 0;
+		while (++i < argc - 1)
 		{
-			error = 0;
-			i = 0;
-			while (++i < argc - 1)
+			if (ft_strcmp(argv[i], argv[i + 1]) > 0)
 			{
-				if (ft_strcmp(argv[i], argv[i + 1]) > 0)
-				{
-					error = 1;
-					swap = argv[i];
-					argv[i] = argv[i + 1];
-					argv[i + 1] = swap;
-				}
+				error = 1;
+				swap = argv[i];
+				argv[i] = argv[i + 1];
+				argv[i + 1] = swap;
 			}
 		}
-		i = 0;
-		while (++i < argc)
-			ft_pustr(argv[i]), ft_putchar('\n');
+	}
+	while (++error < argc)
+	{
+		ft_pustr(argv[error]);
+		ft_putchar('\n');
 	}
 }
